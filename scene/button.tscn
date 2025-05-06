@@ -9,12 +9,17 @@ animations = [{
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("2_33e6t")
+}],
+"loop": true,
+"name": &"clicked",
+"speed": 5.0
 }, {
+"frames": [{
 "duration": 1.0,
 "texture": ExtResource("3_lc5p3")
 }],
-"loop": false,
-"name": &"clicked",
+"loop": true,
+"name": &"default",
 "speed": 5.0
 }]
 
@@ -25,7 +30,6 @@ script = ExtResource("1_auuqi")
 position = Vector2(5.72205e-06, -5.72205e-06)
 scale = Vector2(0.234727, 0.234727)
 sprite_frames = SubResource("SpriteFrames_aqyin")
-animation = &"clicked"
 
 [node name="Button" type="Button" parent="."]
 modulate = Color(1, 1, 1, 0)
@@ -34,4 +38,5 @@ offset_top = -35.0
 offset_right = 35.0
 offset_bottom = 35.0
 
-[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="button_down" from="Button" to="." method="_on_button_button_down"]
+[connection signal="button_up" from="Button" to="." method="_on_button_button_up"]
